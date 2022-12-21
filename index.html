@@ -48,8 +48,10 @@
                                     <div class="container-img">
                                         <img :src="`./img/avatar${item.avatar}.jpg`" alt="">
                                     </div>
-                                    <p class="nome-utente">{{item.name}}</p>
-                                    <p>Ultimo messaggio inviato</p>
+                                    <div class="generalità">
+                                        <p class="nome-utente">{{item.name}}</p> 
+                                        <p class="last-message">Ultimo messaggio inviato</p>
+                                    </div>
                                 </div>
                                 <div class="ora"> 12:00</div>
                             </div>
@@ -57,7 +59,40 @@
                     </ul>
 
                 </div>
-                <div class="container-messaggi"></div>
+                <div class="container-messaggi">
+                    <div class="header-messaggi">
+                        <div class="contact">
+                            <div class="pfp">
+                                <img src="./img/avatar_io.jpg" alt="my-pfp">
+                            </div>
+                            <div>
+                                <p >Nome</p>
+                                <p class="last-message">Ultimo accesso oggi alle 12:00</p>
+                            </div>
+                        </div>
+                        <div class="icons-messaggi">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                            <i class="fa-solid fa-paperclip"></i>
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                        </div>
+                    </div>
+                    <div class="corpo-messaggi">
+                        <div class="container-chat-message">
+                            <div class="sent message">
+                                <p> Hai portato a spasso il cane?</p>
+                                <div class="ora-invio">15:30</div>
+                                </div>
+                            <div class="sent message"> 
+                                <p>Ricordati di stendere i panni</p>
+                                <div class="ora-invio">15:30</div>
+                            </div>
+                            <div class="received message"> 
+                                <p> Tutto fatto!</p>
+                                <div class="ora-invio">15:30</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
 
         </div>
