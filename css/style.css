@@ -160,7 +160,7 @@ align-items: center;
 }
 
 .message p{
-    padding: 10px;
+    padding: 15px 15px 5px 15px ;
 }
 
 .ora-invio{
@@ -184,4 +184,31 @@ align-items: center;
     margin: 10px 0;
     border-radius: 10px;
     align-self: flex-start;
+}
+
+.footer{
+    background-color: #f3eeea;
+    display: flex;
+    height: 5%;
+    justify-content: space-between;
+    align-items: center;
+    padding: 27px;
+}
+
+.scrivi-messaggio{
+    width: 100%;
+    text-align: center;
+}
+
+.scrivi-messaggio input{
+    width: 95%;
+    height: 40px;
+    border: none;
+    border-radius: 10px;
+}
+
+.emoji, .audio{
+    color: #6b7274;
+    font-size: 20px;
+    text-align: center;
 }
