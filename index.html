@@ -63,10 +63,10 @@
                     <div class="header-messaggi">
                         <div class="contact">
                             <div class="pfp">
-                                <img src="./img/avatar_io.jpg" alt="my-pfp">
+                                <img :src="`./img/avatar${contacts[activeChat].avatar}.jpg`" alt="pfp">
                             </div>
                             <div>
-                                <p >Nome</p>
+                                <p >{{contacts[activeChat].name}}</p>
                                 <p class="last-message">Ultimo accesso oggi alle 12:00</p>
                             </div>
                         </div>
@@ -77,19 +77,12 @@
                         </div>
                     </div>
                     <div class="corpo-messaggi">
-                        <div class="container-chat-message">
-                            <div class="sent message">
-                                <p> Hai portato a spasso il cane?</p>
-                                <div class="ora-invio">15:30</div>
-                                </div>
-                            <div class="sent message"> 
-                                <p>Ricordati di stendere i panni</p>
-                                <div class="ora-invio">15:30</div>
+                        <div class="container-chat-message" >
+                            <div class="message" v-for="(message, index) in contacts[activeChat].messages" v-bind:class="(message.status == 'sent') ? 'sent' : 'received'">
+                                <p>{{contacts[activeChat].messages[index].message}}</p>
+                                <div class="ora-invio">{{contacts[activeChat].messages[index].date}}</div>
                             </div>
-                            <div class="received message"> 
-                                <p> Tutto fatto!</p>
-                                <div class="ora-invio">15:30</div>
-                            </div>
+                            
                         </div>
                     </div>
                     <div class="footer">
