@@ -4,6 +4,7 @@
   createApp({
     data() {
       return {
+        activeChat: 0,
         contacts: 
         [
             {
@@ -169,5 +170,10 @@
             }
         ]
       }
+    },
+    methods:{
+        changeChat(index){
+            this.activeChat = index
+        }
     }
   }).mount('#app')

@@ -42,7 +42,7 @@
                         <input type="search" placeholder="  Cerca o inizia una nuova chat">
                     </div>
                     <ul class="list">
-                        <li v-for="(item, index) in contacts">
+                        <li v-for="(item, index) in contacts"  v-bind:class="(activeChat == index) ? 'active' : '' " @click="changeChat(index)">
                             <div class="container-chat">
                                 <div class="contatto">
                                     <div class="container-img">

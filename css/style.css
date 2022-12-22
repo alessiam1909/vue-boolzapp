@@ -212,3 +212,7 @@ align-items: center;
     font-size: 20px;
     text-align: center;
 }
+
+.active{
+    background-color: #e9ebeb;
+}
