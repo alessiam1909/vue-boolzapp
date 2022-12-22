@@ -83,6 +83,7 @@
                                 <div class="ora-invio">{{contacts[activeChat].messages[index].date}}</div>
                             </div>
                             
+                            
                         </div>
                     </div>
                     <div class="footer">
@@ -90,7 +91,7 @@
                             <i class="fa-regular fa-face-smile"></i>
                         </div>
                         <div class="scrivi-messaggio">
-                            <input type="text" placeholder="   Scrivi un messaggio">
+                            <input type="text" placeholder="   Scrivi un messaggio" v-model="nuovo" @keyup.enter="newMessage()" >
                         </div>
                         <div class="audio">
                             <i class="fa-solid fa-microphone"></i>
@@ -100,6 +101,7 @@
             </div>
 
         </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/luxon/3.1.1/luxon.min.js" integrity="sha512-hZKz8wkgOcWeZanRioE6H6AC3OJspzJQyDBB5jLoZ1jIKbYDt5MwVIvU703WwE4sjvKZw9uNmmYlt29xKS27RA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
         <script type="text/javascript" src="./js/script.js"></script>
     </body>

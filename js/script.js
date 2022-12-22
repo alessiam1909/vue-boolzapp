@@ -1,5 +1,5 @@
 
-  const { createApp } = Vue
+  const { createApp } = Vue;
 
   createApp({
     data() {
@@ -174,6 +174,22 @@
     methods:{
         changeChat(index){
             this.activeChat = index
-        }
-    }
-  }).mount('#app')
+        },
+        formatDate(){
+            let orarioInvio = this.contacts[this.activeChat].messages.date;
+            orarioInvio.dt.toLocaleString(DateTime.TIME_24_SIMPLE);
+           return orarioInvio
+        },
+        newMessage(){
+            let nuovoMessaggio =  [
+                {
+                    message: this.nuovo,
+                    status: 'sent'
+                }
+            ]
+                
+            this.contacts.push(nuovoMessaggio);
+            this.nuovo = '';
+        },
+}
+}).mount('#app')
