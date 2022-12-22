@@ -181,12 +181,11 @@
            return orarioInvio
         },
         newMessage(){
-            let nuovoMessaggio =  [
+            let nuovoMessaggio =
                 {
                     message: this.nuovo,
                     status: 'sent'
                 }
-            ]
                 
             this.contacts.push(nuovoMessaggio);
             this.nuovo = '';
