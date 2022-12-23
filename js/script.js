@@ -200,9 +200,11 @@
  
             
             setTimeout(() => {
+                let arrayRisposte = ['Ok!', 'Certo!', 'Come stai?', 'Ci vediamo alle 8:00?', 'A dopo!']
+                let answer = arrayRisposte[Math.floor(Math.random()*arrayRisposte.length)];
                 let risposta = {
                     date: date,
-                    message: 'Ok!',
+                    message: answer,
                     status: 'received'
                 }
                 rispostaNuova = this.contacts[this.activeChat].messages.push(risposta);
