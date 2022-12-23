@@ -175,11 +175,11 @@
       }
     },
     computed: {
-        searchContact(){
+        search_contact(){
             let chatFiltrata;
             if(this.cerca != ''){
-                chatFiltrata = this.contacts.filter((elem) => {
-                    return elem.name.toLowerCase().includes(this.cerca.toLowerCase())
+                chatFiltrata = this.contacts.filter((chat) => {
+                    return chat.name.toLowerCase().includes(this.cerca.toLowerCase())
                     
                 })
             }else{

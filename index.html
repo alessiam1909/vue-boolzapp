@@ -39,10 +39,10 @@
                         <button class="lente">
                             <i class="fa-solid fa-magnifying-glass"></i>
                         </button>
-                        <input type="search" placeholder="  Cerca o inizia una nuova chat" @keyup="searchContact" v-model="cerca">
+                        <input type="search" placeholder="  Cerca o inizia una nuova chat" @keyup="search_contact" v-model="cerca">
                     </div>
                     <ul class="list">
-                        <li v-for="(item, index) in searchContact"  v-bind:class="(activeChat == index) ? 'active' : '' " @click="changeChat(index)">
+                        <li v-for="(item, index) in search_contact"  v-bind:class="(activeChat == index) ? 'active' : '' " @click="changeChat(index)">
                             <div class="container-chat">
                                 <div class="contatto">
                                     <div class="container-img">
@@ -67,7 +67,7 @@
                             </div>
                             <div>
                                 <p >{{contacts[activeChat].name}}</p>
-                                <p class="last-message">Ultimo accesso oggi alle {{newDate}}</p>
+                                <p class="last-message">Ultimo accesso oggi alle 12:00</p>
                             </div>
                         </div>
                         <div class="icons-messaggi">
