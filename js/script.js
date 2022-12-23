@@ -1,6 +1,8 @@
 
   const { createApp } = Vue;
 
+  const dt = luxon.DateTime;
+
   createApp({
     data() {
       return {
@@ -175,20 +177,38 @@
         changeChat(index){
             this.activeChat = index
         },
-        formatDate(){
-            let orarioInvio = this.contacts[this.activeChat].messages.date;
-            orarioInvio.dt.toLocaleString(DateTime.TIME_24_SIMPLE);
-           return orarioInvio
+        formatDate(index){
+            let orarioInvio = this.contacts[this.activeChat].messages[index].date;
+            let newDate = dt.fromFormatExplain(orarioInvio, "hh:mm");
+            //let newDateFormatted= newDate.toLocaleString(dt.TIME_24_SIMPLE);
+            
+            console.log(newDate)
+           return newDate
         },
         newMessage(){
+            let date = dt.now().setLocale('it').toLocaleString(dt.TIME_24_SIMPLE);
+            console.log(date);
             let nuovoMessaggio =
                 {
+                    date: date,
                     message: this.nuovo,
                     status: 'sent'
                 }
                 
-            this.contacts.push(nuovoMessaggio);
+            this.contacts[this.activeChat].messages.push(nuovoMessaggio);
             this.nuovo = '';
+ 
+            let risposta = {
+                date: date,
+                message: 'Ok!',
+                status: 'received'
+            }
+
+            rispostaNuova = this.contacts[this.activeChat].messages.push(risposta);
+            setTimeout(function(){
+                rispostaNuova;
+            }, 4000);
+            
         },
 }
 }).mount('#app')

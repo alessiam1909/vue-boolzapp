@@ -80,10 +80,7 @@
                         <div class="container-chat-message" >
                             <div class="message" v-for="(message, index) in contacts[activeChat].messages" v-bind:class="(message.status == 'sent') ? 'sent' : 'received'">
                                 <p>{{contacts[activeChat].messages[index].message}}</p>
-                                <div class="ora-invio">{{contacts[activeChat].messages[index].date}}</div>
-                            </div>
-                            <div  class="message sent" >
-                                <P>{{contacts[activeChat].nuovo}}</P>
+                                <div class="ora-invio" >{{formatDate(index)}}</div>
                             </div>
                             
                         </div>
