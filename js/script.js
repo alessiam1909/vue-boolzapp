@@ -7,6 +7,7 @@
     data() {
       return {
         activeChat: 0,
+        cerca : '',
         contacts: 
         [
             {
@@ -173,18 +174,32 @@
         ]
       }
     },
+    computed: {
+        searchContact(){
+            let chatFiltrata;
+            if(this.cerca != ''){
+                chatFiltrata = this.contacts.filter((elem) => {
+                    return elem.name.toLowerCase().includes(this.cerca.toLowerCase())
+                    
+                })
+            }else{
+                
+                chatFiltrata = this.contacts;
+            };
+            
+            return chatFiltrata
+        }
+    },
     methods:{
         changeChat(index){
             this.activeChat = index
         },
         formatDate(index){
             let orarioInvio = this.contacts[this.activeChat].messages[index].date;
-            let jsDate = new Date (orarioInvio)
-           
+            let jsDate = new Date (orarioInvio);
             let newDate =  dt.fromJSDate(jsDate);
             //let newDateFormatted= newDate.toLocaleString(dt.TIME_24_SIMPLE);
             newDate = newDate.setLocale('it').toLocaleString(dt.TIME_24_SIMPLE);
-            console.log(newDate)
            return newDate
         },
         newMessage(){
@@ -212,6 +227,7 @@
                 rispostaNuova = this.contacts[this.activeChat].messages.push(risposta);
             }, 2000);
             
-        },
+        }
+
 }
 }).mount('#app')
