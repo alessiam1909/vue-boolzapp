@@ -179,14 +179,16 @@
         },
         formatDate(index){
             let orarioInvio = this.contacts[this.activeChat].messages[index].date;
-            let newDate = dt.fromFormatExplain(orarioInvio, "hh:mm");
+            let jsDate = new Date (orarioInvio)
+           
+            let newDate =  dt.fromJSDate(jsDate);
             //let newDateFormatted= newDate.toLocaleString(dt.TIME_24_SIMPLE);
-            
+            newDate = newDate.setLocale('it').toLocaleString(dt.TIME_24_SIMPLE);
             console.log(newDate)
            return newDate
         },
         newMessage(){
-            let date = dt.now().setLocale('it').toLocaleString(dt.TIME_24_SIMPLE);
+            let date = dt.now().setLocale('it');
             console.log(date);
             let nuovoMessaggio =
                 {
