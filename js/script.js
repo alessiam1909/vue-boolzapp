@@ -198,16 +198,15 @@
             this.contacts[this.activeChat].messages.push(nuovoMessaggio);
             this.nuovo = '';
  
-            let risposta = {
-                date: date,
-                message: 'Ok!',
-                status: 'received'
-            }
-
-            rispostaNuova = this.contacts[this.activeChat].messages.push(risposta);
-            setTimeout(function(){
-                rispostaNuova;
-            }, 4000);
+            
+            setTimeout(() => {
+                let risposta = {
+                    date: date,
+                    message: 'Ok!',
+                    status: 'received'
+                }
+                rispostaNuova = this.contacts[this.activeChat].messages.push(risposta);
+            }, 2000);
             
         },
 }
