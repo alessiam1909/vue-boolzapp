@@ -127,6 +127,10 @@ align-items: center;
     border-top: 1px solid #d6d5d8;
 }
 
+.container-chat:hover{
+    cursor: pointer;
+}
+
 .contatto{
     display: flex;
 }
