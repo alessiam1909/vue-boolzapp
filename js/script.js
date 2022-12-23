@@ -8,6 +8,7 @@
       return {
         activeChat: 0,
         cerca : '',
+        nuovo : '',
         contacts: 
         [
             {
